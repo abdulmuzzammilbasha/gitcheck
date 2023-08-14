@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="main"></div>
+
+    <script>
+        var myHTTP = new XMLHttpRequest();
+        myHTTP.open('GET', 'https://restcountries.com/v3.1/all');
+        myHTTP.send();
+        myHTTP.onload = ()=>{
+    if(myHTTP.status===200){
+        const response = JSON.parse(myHTTP.response);
+
+// Get all the countries from Asia continent /region using Filter function
+
+        const asiaCountries = response.filter((country)=>{
+        if (country.region === 'Asia'){
+         return true;
+}
+});
+console.log("countries in Asia", asiaCountries);
+
+// Get all the countries with a population of less than 2 lakhs using Filter function
+
+const countriesLessthan2l = response.filter((country)=>{
+if(country.population<200000){
+    return true;
+}
+});
+console.log("countries less than 2L population", countriesLessthan2l)
+
+// Print the total population of countries using reduce function
+
+const totalPulation = response.reduce((total, countrywise) => {
+    return total+countrywise.population;
+},0);
+console.log("total population : ", totalPulation);
+
+// Print the following details name, capital, flag using forEach function
+
+response.forEach((country) => {
+    console.log("name : ", country.name.official);
+
+   country.capital.forEach((cap)=>{
+    console.log ('capital', cap);
+    });
+    
+
+    console.log("flag : ", country.flag);
+});
+
+
+    }
+}
+
+
+
+    </script>
+</body>
+</html>
