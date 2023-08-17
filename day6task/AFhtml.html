@@ -54,16 +54,16 @@ response.forEach((country)=>{
   
 })
 
-// // Print the following details name, capital, flag using forEach function
+// Print the following details name, capital, flag using forEach function
 
-// response.forEach((country) => {
-//     console.log("name : ", country.name.official);
+response.forEach((country) => {
+    console.log("name : ", country.name.official);
+if(country.capital !== undefined){
+   console.log(country.capital[0]);
+}   
 
-//    console.log(country.capital[0]);
-    
-
-//     console.log("flag : ", country.flag);
-// });
+    console.log("flag : ", country.flag);
+});
 
 
 
