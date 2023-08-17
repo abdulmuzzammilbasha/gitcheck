@@ -1,9 +1,7 @@
-currencies:{
-    USD:{
-        name:"United States dollar"
-        Symbol: "$"
-    }
-}
-
-const test = currencies.name;
-console.log(test);
+const currencies = {
+    name: "india",
+    populatioin: 100,
+    money: usd={name:"american dollarnod"}
+  };
+const keyArray = Object.keys(currencies);
+console.log(keyArray);

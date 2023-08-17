@@ -42,18 +42,32 @@ const totalPulation = response.reduce((total, countrywise) => {
 },0);
 console.log("total population : ", totalPulation);
 
-// Print the following details name, capital, flag using forEach function
+//Print the country which uses US Dollars as currency.
 
-response.forEach((country) => {
-    console.log("name : ", country.name.official);
+response.forEach((country)=>{
+    if(country.currencies !== undefined){
+        if (country.currencies.USD !== undefined){
+        console.log(country.name.official)
+    console.log(country.currencies.USD);
+        }
+    }
+    // if(Object.keys(country.currencies) !== null && Object.keys(country.currencies) !== null){
+    // console.log(Object.keys(country.currencies));
+    // }
+})
 
-   country.capital.forEach((cap)=>{
-    console.log ('capital', cap);
-    });
+// // Print the following details name, capital, flag using forEach function
+
+// response.forEach((country) => {
+//     console.log("name : ", country.name.official);
+
+//    console.log(country.capital[0]);
     
 
-    console.log("flag : ", country.flag);
-});
+//     console.log("flag : ", country.flag);
+// });
+
+
 
 
     }
