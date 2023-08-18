@@ -33,6 +33,8 @@ const productList = [
   }
 ]
 
+//Iteration over JSON using forEach
+
 productList.forEach((item)=>{
 console.log(item.product);
 console.log(item.price);
