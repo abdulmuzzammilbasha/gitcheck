@@ -33,7 +33,7 @@ const productList = [
   }
 ]
 
-//Iteration over JSON using forEach
+//Iteration over JSON using forEach loop
 
 productList.forEach((item)=>{
 console.log(item.product);
@@ -41,4 +41,17 @@ console.log(item.price);
 console.log(item.specs)
 })
 
-  
+//Iteration over JSON using for..in loop
+
+for(var i in productList){
+  console.log(productList[i].product);
+}
+
+//Iteration over JSON using for loop
+
+
+for(var x =0 ;x<productList.length; x++){
+  console.log(productList[x].product);
+}
+
+// we cannot use for..of loop with objects
